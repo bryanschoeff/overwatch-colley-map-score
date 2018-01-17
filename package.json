@@ -1,0 +1,30 @@
+{
+  "name": "overwatch-colley",
+  "version": "0.1.0",
+  "description": "Ranking the Overwatch League teams with the Colley Matrix",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "overwatch",
+    "owl",
+    "colley"
+  ],
+  "author": "Jason Duffy",
+  "license": "ISC",
+  "dependencies": {
+    "colley-rankings": "^1.0.2",
+    "got": "^8.0.2",
+    "left-pad": "^1.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "testdouble": "^3.3.2"
+  },
+  "ava": {
+    "files": [
+      "tests/*.js"
+    ]
+  }
+}
