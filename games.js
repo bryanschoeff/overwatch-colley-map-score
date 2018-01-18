@@ -12,7 +12,19 @@ exports.loadGamesFromApi = new Promise((resolve, reject) => {
     schedule.forEach(stage => {
       stage.matches.forEach(match => {
         if (match.state === 'CONCLUDED') {
-          results.push([winner(match), loser(match)])
+          let teamA = match.competitors[0]
+          let teamB = match.competitors[1]
+
+          match.games.forEach(map => {
+            let scoreA = map.points[0]
+            let scoreB = map.points[1]
+
+            if (scoreA > scoreB) {
+              results.push([ teamA.id, teamB.id ])
+            } else if (scoreB > scoreA) {
+              results.push([ teamB.id, teamA.id ])
+            }
+          });
         }
       })
     })
